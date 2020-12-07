@@ -90,11 +90,15 @@ public class MainActivity extends AppCompatActivity {
                     animator.start();
                     //  imgplay.setImageResource(R.drawable.pause);
                     start.setText(R.string.off);
+                    imgplay.setVisibility(View.INVISIBLE);
+                    imgpause.setVisibility(View.VISIBLE);
                 }else {
                     unbindService(connection);
                     isBound = false;
                     animator.end();
                     start.setText(R.string.on);
+                    imgplay.setVisibility(View.VISIBLE);
+                    imgpause.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -107,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
                 if (isBound){
                     myService.fastStart();
                     animator.start();
-
+                    imgplay.setVisibility(View.INVISIBLE);
+                    imgpause.setVisibility(View.VISIBLE);
                 }
                 // Đối thứ ba báo rằng Service sẽ tự động khởi tạo
             }
@@ -119,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
                 if (isBound){
                     myService.pause();
                     animator.cancel();
+                    imgplay.setVisibility(View.VISIBLE);
+                    imgpause.setVisibility(View.INVISIBLE);
                 }
 
             }

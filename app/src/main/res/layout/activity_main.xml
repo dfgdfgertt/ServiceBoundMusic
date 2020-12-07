@@ -64,9 +64,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></TextView>
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
         android:gravity="center"
-        android:orientation="horizontal"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
@@ -76,8 +75,10 @@
             android:id="@+id/btnStart"
             android:textColor="@color/white"
             android:textSize="34dp"
+            android:paddingTop="8dp"
+            android:textAlignment="center"
             android:textStyle="bold"
-            android:gravity="center"
+            android:layout_toLeftOf="@+id/imgbtnplay"
             android:layout_marginRight="15dp"
             android:text="@string/on"
             android:layout_width="70dp"
@@ -100,6 +101,7 @@
             android:scaleType="fitXY"
             android:background="@null"
             android:id="@+id/imgbtnPause"
+            android:visibility="invisible"
             android:layout_width="70dp"
             android:layout_marginRight="15dp"
             android:layout_height="70dp">
@@ -109,6 +111,7 @@
             android:src="@drawable/fastfwd"
             android:scaleType="fitXY"
             android:background="@null"
+            android:layout_toRightOf="@+id/imgbtnPause"
             android:id="@+id/imgbtnfastfwd"
             android:layout_width="70dp"
             android:layout_marginRight="15dp"
@@ -116,7 +119,7 @@
 
         </ImageButton>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 <!--    <Button-->
 <!--        android:id="@+id/btOn"-->
